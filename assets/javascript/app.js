@@ -1,15 +1,27 @@
+// set time of 30 sec
+const countDownStart = 30;
+
 // 1. function: on click of a START btn:
-$('.success').on('click', function(){
+$('.success').on('click', function () {
     // alert("hello");
     // hide: START btn
     $('.success').hide();
     // hide: card subtitle
     $(".card-subtitle").hide();
-    
+    // Trigger and add: countdown timer starting from 30 sec
+    function countDownTimer() {
+        var countDownCurrent = countDownStart--;
+        var paragraph = $("<p>").addClass('countdown');
+        var timer = paragraph.html(countDownCurrent + "seconds");
+        $(".countdown").append(timer);
+        return;
+    }
+
+
 })
- 
- 
-// add: countdown timer starting from 30 min
+
+
+
 // add: Q string and radiobuttons GUI elements
 // 3.function: 
 // i. if correct choice, add to Correct Answer
