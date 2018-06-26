@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/doodles.png");
+}
+.row {
+    margin-top: 20px;
+}
+div.text-white {
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+}
+.btn {
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.success {background-color: #4CAF50;} /* Green */
