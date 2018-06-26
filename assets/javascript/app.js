@@ -1,6 +1,14 @@
 // 1. function: on click of a START btn:
-// hide: START btn 
-// hide: card subtitle 
+$('.success').on('click', function(){
+    // alert("hello");
+    // hide: START btn
+    $('.success').hide();
+    // hide: card subtitle
+    $(".card-subtitle").hide();
+    
+})
+ 
+ 
 // add: countdown timer starting from 30 min
 // add: Q string and radiobuttons GUI elements
 // 3.function: 
