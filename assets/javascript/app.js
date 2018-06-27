@@ -1,5 +1,9 @@
 // set time of 30 sec
 var countDownStart = 30;
+var correctAnswers = "";
+var incorrectAnswers = "";
+var unanswered = "";
+
 
 
 
@@ -28,7 +32,7 @@ $('#start_btn').on('click', function () {
 
     // add: btn DONE
     var newbuttonDone = $("<button>").addClass('btn success').html('DONE');
-    var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction, 2000);').attr('id', 'done_btn');
+    var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction);').attr('id', 'done_btn');
     $(".card-text").append(buttonDone);
     
      
@@ -52,6 +56,7 @@ function myFunction() {
 // hide: btn DONE
 $("#done_btn").hide();
 // add: 'All Done!' string
+$(".card-text").text("All Done!");
 // add: Correct Answer total points 
 // add: Incorrect Answer total points 
 // add: Unanswered total points 
