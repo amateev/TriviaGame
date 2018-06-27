@@ -15,32 +15,43 @@
 
 <body>
     <div class="bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
                     <div class="card bg-primary text-white">
-                
-                            <div class="card-body">
-                              <h1 class="card-title">Trivia Game</h1>
-                              <br>
-                              <h4 class="card-subtitle">Press Start button to begin the game</h4>
-                              
-                              <br>
-                              <br>
-                              <br>
-                              
-                              <p class="card-text"></p>
-                              <button onclick= "setTimeout(myFunction, 3000);" class="btn success" id="start_btn"><b>START</b></button>
-                              <!-- <button onclick= "setTimeout(myFunction, 2000);" class="btn success"><b>DONE</b></button> -->
-                            </div>
-                          </div>
 
+                        <div class="card-body">
+                            <h1 class="card-title">Trivia Game</h1>
+                            <br>
+                            <h4 class="card-subtitle">Press Start button to begin the game</h4>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <p class="card-text">
+                                <div class="questianOne">
+                                    <p id="questianOne"></p>
+                                    <p id="radio_btnOne"></p>
+                                    <p id="radio_btnTwo"></p>
+                                    <p id="radio_btnThree"></p>
+                                </div>
+                            </p>
+                            <div class="buttons">
+                                <button onclick="setTimeout(myFunction, 3000);" class="btn success" id="start_btn">
+                                    <b>START</b>
+                                </button>
+                                <!-- <button onclick= "setTimeout(myFunction, 2000);" class="btn success"><b>DONE</b></button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="col-md-3"></div>
         </div>
     </div>
-    </div>
 
 
 
@@ -48,7 +59,7 @@
 
 
 
- 
+
 
 
     <!-- Added link to the jQuery Library -->

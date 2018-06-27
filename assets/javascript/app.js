@@ -24,7 +24,25 @@ $('#start_btn').on('click', function () {
     $(".card-text").append(timer);
     j  = countDownStart - countDownCurrent;
     countDownCurrent--; 
-// add: Q string and radiobuttons GUI elements
+
+    // add: Q string and radiobuttons GUI elements
+    //Q1:
+    $("#questianOne").text('What is a \'Terminal\'?');
+    
+    //radiobutton:
+    var radioButton = $("<input>").addClass("radio_btn").attr("type", "radio");
+    //A1:
+    var qOne_answerOne = "an application that helps to comminicate with the computer ";
+    $('#radio_btnOne').append(qOne_answerOne, radioButton);
+    //A2
+    var radioButton = $("<input>").addClass("radio_btn").attr("type", "radio");
+    var qOne_answerTwo = "a notepad where developers can store their ideas ";
+    $('#radio_btnTwo').append(qOne_answerTwo, radioButton);
+    //A3
+    var radioButton = $("<input>").addClass("radio_btn").attr("type", "radio");
+    var qOne_answerThree = "none of the above ";
+    $('#radio_btnThree').append(qOne_answerThree, radioButton);
+
 // 3.function: 
 // i. if correct choice, add to Correct Answer
 // ii. if incorrect choice, add to Incorrect Answer
@@ -33,7 +51,7 @@ $('#start_btn').on('click', function () {
     // add: btn DONE
     var newbuttonDone = $("<button>").addClass('btn success').html('DONE');
     var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction);').attr('id', 'done_btn');
-    $(".card-text").append(buttonDone);
+    $(".buttons").append(buttonDone);
     
      
    
@@ -53,6 +71,9 @@ function myFunction() {
     // hide: countdown timer
     $(".countdown").hide();
 // hide: Q and radiobuttons
+// $("#questianOne").hide();
+// $("#radio_btn").hide();
+$("div.questianOne").hide();
 // hide: btn DONE
 $("#done_btn").hide();
 // add: 'All Done!' string
