@@ -29,28 +29,39 @@ $('#start_btn').on('click', function () {
     //Q1:
     $("#questianOne").text('What is a \'Terminal\'?');
 
-
     //A1 with val C - correct answer:
     //radiobutton:
-    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'C', name:"chest" });
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'C'});
     var qOne_answerOne = "an application that helps to comminicate with the computer ";
-    $('#radio_btnOne').append(qOne_answerOne, radioButton);
+    $('#radio_btnQ1A1').append(qOne_answerOne, radioButton);
     //A2 with val I - incorrect answer:
     //radiobutton:
-    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I', name:"chest" });
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I'});
     var qOne_answerTwo = "a notepad where developers can store their ideas ";
-    $('#radio_btnTwo').append(qOne_answerTwo, radioButton);
+    $('#radio_btnQ1A2').append(qOne_answerTwo, radioButton);
     //A3 with val I - incorrect answer:
     //radiobutton:
-    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I', name:"chest" });
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I'});
     var qOne_answerThree = "none of the above ";
-    $('#radio_btnThree').append(qOne_answerThree, radioButton);
+    $('#radio_btnQ1A3').append(qOne_answerThree, radioButton);
 
-    // 3.function: 
-    // i. if correct choice, add to Correct Answer
-
-    // ii. if incorrect choice, add to Incorrect Answer
-    // iii. if no btns chosen points added to Unanswered
+    //Q2:
+    $("#questianTwo").text('Why do we use \'Terminal\'?');
+     //A1 with val C - correct answer:
+    //radiobutton:
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'C'});
+    var qTwo_answerOne = "it is fast in compare to \'Finder\' ";
+    $('#radio_btnQ2A1').append(qTwo_answerOne, radioButton);
+     //A2 with val I - incorrect answer:
+    //radiobutton:
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I'});
+    var qTwo_answerTwo = "it has a better GUI ";
+    $('#radio_btnQ2A2').append(qTwo_answerTwo, radioButton);
+     //A3 with val I - incorrect answer:
+    //radiobutton:
+    var radioButton = $("<input>").addClass("radio_btn").attr({ type: "radio", val: 'I'});
+    var qTwo_answerThree = "none of the above ";
+    $('#radio_btnQ2A3').append(qTwo_answerThree, radioButton);
 
     // add:  DONE btn
     var newbuttonDone = $("<button>").addClass('btn success').html('DONE');
@@ -80,6 +91,7 @@ function myFunction() {
     // $("#questianOne").hide();
     // $("#radio_btn").hide();
     $("div.questianOne").hide();
+    $("div.questianTwo").hide();
     // hide: btn DONE
     $("#done_btn").hide();
     // add: 'All Done!' string
@@ -92,13 +104,16 @@ function myFunction() {
     // add: Incorrect Answer total points 
     // add: Unanswered total points 
     if ($(".radio_btn:checked").length == 0) {
-        alert("No");
         unanswered = unanswered ++;
         $(".unanswered").text(unanswered);
+    // }else ($("input[type=radio][value='C']").prop("checked",true) {
+    //     correctAnswers = correctAnswers ++;
+    //     $("p.correctAnswers").text(correctAnswers);
     }
 }
 
 
-
+// $("#radio_1").prop("checked", true);
+// $("input[name=background][value='some value']").prop("checked",true);
 
 
