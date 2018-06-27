@@ -86,11 +86,16 @@ function myFunction() {
     $(".card-text").text("All Done!");
     // add: Correct Answer total points
     //Do a validation check
-    if (!$('input[name=chest]:checked').val()) {
-        alert("good");
-    }
+    // if (!$('input[name=chest]:checked').val()) {
+    //     alert("good");
+    // }
     // add: Incorrect Answer total points 
     // add: Unanswered total points 
+    if ($(".radio_btn:checked").length == 0) {
+        alert("No");
+        unanswered = unanswered ++;
+        $(".unanswered").text(unanswered);
+    }
 }
 
 
