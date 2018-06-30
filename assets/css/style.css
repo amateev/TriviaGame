@@ -16,3 +16,4 @@ div.text-white {
     cursor: pointer; /* Add a pointer cursor on mouse-over */
 }
 .success {background-color: #4CAF50;} /* Green */
+.done-page {display: none;}
