@@ -23,8 +23,10 @@ $('#start_btn').on('click', function () {
         countDownStart--;
         $(".countdowntimer").text(countDownStart + " seconds left");
 
-        if (countDownStart <= 0)
+        if (countDownStart <= 0) {
             clearInterval(downloadTimer);
+            myFunction();
+        }
     }, 1000);
 
 
@@ -98,7 +100,7 @@ function myFunction() {
 
 
     //Do a validation check
-     //count unanswered for radiobuttons with name=q1 and name=q2:
+    //count unanswered for radiobuttons with name=q1 and name=q2:
     if ($(".radio_btn[name= q1]:checked").length == 0) {
         //alert("no answered questians");
         unanswered;
@@ -109,21 +111,48 @@ function myFunction() {
         unanswered++;
         $(".unanswered").text(unanswered);
     }
-    else if ($('input:radio[name=q1]')[0].checked = true) {
+
+
+    //counting correct answers for q1:
+    if ($('.radio_btn[name=q1]')[0].checked = true) {
+        
         correctAnswers;
         correctAnswers++;
         $(".correctAnswers").text(correctAnswers);
-    }else if ($('input:radio[name=q1]')[1].checked = true)   
-    //($('input:radio[name=q1]')[2].checked = true)) 
-    {
+    }
+     //counting incorrect answers for q1
+     if ($('.radio_btn[name=q1]')[1].checked = true) {
+        incorrectAnswers;
+        incorrectAnswers++;
+        $(".incorrectAnswers").text(incorrectAnswers);
+    } if ($('.radio_btn[name=q1]')[2].checked = true) {
         incorrectAnswers;
         incorrectAnswers++;
         $(".incorrectAnswers").text(incorrectAnswers);
     }
+
+
+    //counting correct answers for q2:
+    if ($('.radio_btn[name=q2]')[0].checked = true) {
+        
+        correctAnswers;
+        correctAnswers++;
+        $(".correctAnswers").text(correctAnswers);
+    }
+     //counting incorrect answers for q2
+     if ($('.radio_btn[name=q2]')[1].checked = true) {
+        incorrectAnswers;
+        incorrectAnswers++;
+        $(".incorrectAnswers").text(incorrectAnswers);
+    } if ($('.radio_btn[name=q2]')[2].checked = true) {
+        incorrectAnswers;
+        incorrectAnswers++;
+        $(".incorrectAnswers").text(incorrectAnswers);
+    }
+    
 }
 
 
-// $("#radio_1").prop("checked", true);
-// $("input[name=background][value='some value']").prop("checked",true);
+
 
 
