@@ -23,9 +23,15 @@ $('#start_btn').on('click', function () {
         countDownStart--;
         $(".countdowntimer").text(countDownStart + " seconds left");
 
-        if (countDownStart <= 0) {
+        if (countDownStart <= 0)  {
             clearInterval(downloadTimer);
             myFunction();
+        }
+        //this exit from the function with condition of a pressed 
+        // btn "DONE" does not work
+        // btn cannot be defined by the browser
+        if (target.id === "done_btn") {
+            return true;
         }
     }, 1000);
 
@@ -76,14 +82,9 @@ $('#start_btn').on('click', function () {
     var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction);').attr('id', 'done_btn');
     $(".q_a_page").append(buttonDone);
 
-
     return;
 
-
-
-
 })
-
 
 
 
@@ -114,42 +115,42 @@ function myFunction() {
 
 
     //counting correct answers for q1:
-    if ($('.radio_btn[name=q1]')[0].checked = true) {
+    if ($('input:radio[name=q1]:nth(0)').attr('checked',true)) {
         
         correctAnswers;
         correctAnswers++;
         $(".correctAnswers").text(correctAnswers);
     }
      //counting incorrect answers for q1
-     if ($('.radio_btn[name=q1]')[1].checked = true) {
-        incorrectAnswers;
-        incorrectAnswers++;
-        $(".incorrectAnswers").text(incorrectAnswers);
-    } if ($('.radio_btn[name=q1]')[2].checked = true) {
-        incorrectAnswers;
-        incorrectAnswers++;
-        $(".incorrectAnswers").text(incorrectAnswers);
-    }
+    //  if ($('.radio_btn[name=q1]')[1].checked = true) {
+    //     incorrectAnswers;
+    //     incorrectAnswers++;
+    //     $(".incorrectAnswers").text(incorrectAnswers);
+    // } if ($('.radio_btn[name=q1]')[2].checked = true) {
+    //     incorrectAnswers;
+    //     incorrectAnswers++;
+    //     $(".incorrectAnswers").text(incorrectAnswers);
+    // }
 
 
     //counting correct answers for q2:
-    if ($('.radio_btn[name=q2]')[0].checked = true) {
+    if ($('input:radio[name=q2]')[0].checked = true) {
         
         correctAnswers;
         correctAnswers++;
         $(".correctAnswers").text(correctAnswers);
     }
      //counting incorrect answers for q2
-     if ($('.radio_btn[name=q2]')[1].checked = true) {
-        incorrectAnswers;
-        incorrectAnswers++;
-        $(".incorrectAnswers").text(incorrectAnswers);
-    } if ($('.radio_btn[name=q2]')[2].checked = true) {
-        incorrectAnswers;
-        incorrectAnswers++;
-        $(".incorrectAnswers").text(incorrectAnswers);
-    }
-    
+    //  if ($('.radio_btn[name=q2]')[1].checked = true) {
+    //     incorrectAnswers;
+    //     incorrectAnswers++;
+    //     $(".incorrectAnswers").text(incorrectAnswers);
+    // } if ($('.radio_btn[name=q2]')[2].checked = true) {
+    //     incorrectAnswers;
+    //     incorrectAnswers++;
+    //     $(".incorrectAnswers").text(incorrectAnswers);
+    // }
+    return;
 }
 
 
