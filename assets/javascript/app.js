@@ -1,5 +1,5 @@
 
-var countDownStart = 30;
+var countDownStart = 5;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unanswered = 0;
@@ -22,7 +22,7 @@ $('#start_btn').on('click', function () {
     var downloadTimer = setInterval(function () {
         countDownStart--;
         $(".countdowntimer").text(countDownStart + " seconds left");
-        
+
         if (countDownStart <= 0)
             clearInterval(downloadTimer);
     }, 1000);
@@ -49,8 +49,8 @@ $('#start_btn').on('click', function () {
     var qOne_answerThree = "none of the above ";
     $('#radio_btnQ1A3').append(qOne_answerThree, radioButton);
 
-    
-    
+
+
     //Q2:
     $("#questianTwo").text('Why do we use \'Terminal\'?');
     //A1 with val C - correct answer:
@@ -71,11 +71,11 @@ $('#start_btn').on('click', function () {
 
     // add:  DONE btn
     var newbuttonDone = $("<button>").addClass('btn success').html('DONE');
-    var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction);').attr('id', 'done_btn').attr('name', 'q2');
+    var buttonDone = newbuttonDone.attr('onclick', 'setTimeout(myFunction);').attr('id', 'done_btn');
     $(".q_a_page").append(buttonDone);
 
 
-return;
+    return;
 
 
 
@@ -95,25 +95,30 @@ function myFunction() {
     $(".q_a_page").hide();
     // remove display:none for done-page
     $("div").removeClass("done-page");
-    
+
 
     //Do a validation check
-    //$('input:radio[name=sex]')[2].checked = true;
-     //if (!$('input[name= q1]:checked').val()) {
-    //     alert("good");
-    // }
-    // add: Incorrect Answer total points 
-    // add: Unanswered total points 
-    // if ($(".radio_btn:checked").length == 0) {
-        if ($(".radio_btn[name= q1]:checked").length == 0) {
-        alert("no answered questians");
+     //count unanswered for radiobuttons with name=q1 and name=q2:
+    if ($(".radio_btn[name= q1]:checked").length == 0) {
+        //alert("no answered questians");
         unanswered;
         unanswered++;
         $(".unanswered").text(unanswered);
-    
-        // }else ($("input[type=radio][value='C']").prop("checked",true) {
-        //     correctAnswers = correctAnswers ++;
-        //     $("p.correctAnswers").text(correctAnswers);
+    } if ($(".radio_btn[name= q2]:checked").length == 0) {
+        //alert("no answered questians");
+        unanswered++;
+        $(".unanswered").text(unanswered);
+    }
+    else if ($('input:radio[name=q1]')[0].checked = true) {
+        correctAnswers;
+        correctAnswers++;
+        $(".correctAnswers").text(correctAnswers);
+    }else if ($('input:radio[name=q1]')[1].checked = true)   
+    //($('input:radio[name=q1]')[2].checked = true)) 
+    {
+        incorrectAnswers;
+        incorrectAnswers++;
+        $(".incorrectAnswers").text(incorrectAnswers);
     }
 }
 
